@@ -1,0 +1,21 @@
+{{message}}
+<form action="" method="POST">
+    {%csrf_token%}
+    <input type="text" name="citizen_fname" placeholder="Full Name">
+    <input type="email" name="citizen_email" placeholder="Email Address">
+    <input type="phone" name="citizen_phno" placeholder="Phone Number">
+    
+    <select name="citzen_city">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+  
+    <input type="date" name="citizen_dob" placeholder="Date Of Birth">
+    <input type="text" name="citizen_locality" placeholder="Locality">
+    <input type="textbox" name="citizen_address" placeholder="Address">
+    <input type="text" name="citizen_pincode" placeholder="Pincode">
+    <input type="password" name="citizen_password" placeholder="Password">
+    <input type="password" name="citizen_confirm_password" placeholder="Confirm Password">
+</form>

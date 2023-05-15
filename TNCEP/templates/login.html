@@ -1,0 +1,11 @@
+Citizen Login
+{{error}}
+{{message}}
+<form action="" method="post">
+    {%csrf_token%}
+    <input type="radio" name="smem" value="Email" checked> Email
+    <input type="radio" name="smem" value="PhNo"> Phone
+    <input type="text" name="username" placeholder="Email or Phone Number">
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="submit" value="Login">
+</form>
