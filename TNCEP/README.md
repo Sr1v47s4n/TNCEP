@@ -1,5 +1,3 @@
-# README
-
 ## Tamil Nadu Citizen Emergency Portal
 
 ### Members List:-
@@ -18,7 +16,12 @@ Saran Balaji S
 
 ### Abstract :-
 
-- Manage complaints with ease, hassle-free - Ensure confidentiality and security with encrypted channels - Allow anonymous submissions for added discretion - Enable live tracking of complaints for quicker resolution - Help reduce corruption with a more transparent process - Encourage police action on every complaint submitted
+- Manage complaints with ease, hassle-free
+- Ensure confidentiality and security with encrypted channels
+- Allow anonymous submissions for added discretion
+- Enable live tracking of complaints for quicker resolution
+- Help reduce corruption with a more transparent process
+- Encourage police action on every complaint submitted
 
 ### Domain :-
 
