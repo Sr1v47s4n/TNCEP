@@ -3,7 +3,7 @@ from django.contrib.auth.models import BaseUserManager
 class PoliceManager(BaseUserManager):
     def create_user(self, police_id, police_name, police_email, police_phno, police_city, police_locality, police_post, password=None, **extra_fields):
         if not police_email:
-            raise ValueError('The Police ID must be set')
+            raise ValueError('The Police Email must be set')
         if not police_phno:
             raise ValueError('The Police Phone number must be set')
 
