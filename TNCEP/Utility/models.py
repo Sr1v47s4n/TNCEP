@@ -11,7 +11,7 @@ class NormalComplaint(models.Model):
     complaint_status = models.CharField(max_length=50, null=False, blank=False)
     complaint_image = models.ImageField(upload_to="complaints/images", null=True, blank=True)
     complaint_video = models.FileField(upload_to="complaints/videos", null=True, blank=True)
-    complaint_citizen = models.ForeignKey("CitizenApp.Citizen", on_delete=models.CASCADE, null=False, blank=False)
+    complaint_citizen = models.ForeignKey("CitizenPortal.Citizen", on_delete=models.CASCADE, null=False, blank=False)
 
     def __str__(self):
         return self.complaint_id
@@ -25,7 +25,6 @@ class EmergencyComplaint(models.Model):
     complaint_status = models.CharField(max_length=50, null=True, blank=True)
     complaint_image = models.ImageField(upload_to="complaints/images", null=True, blank=True)
     complaint_video = models.FileField(upload_to="complaints/videos", null=True, blank=True)
-    complaint_citizen = models.ForeignKey("CitizenApp.Citizen", on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.complaint_id

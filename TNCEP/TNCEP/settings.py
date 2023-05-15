@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "CitizenPortal.apps.CitizenportalConfig",
     "PolicePortal.apps.PoliceportalConfig",
+    "Utility",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
