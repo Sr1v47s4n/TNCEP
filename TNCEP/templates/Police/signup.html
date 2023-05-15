@@ -1,20 +1,145 @@
-<form action="" method="POST">
-    {%csrf_token%}
-    <input type="text" name="police_name" placeholder="Full Name">
-    <input type="email" name="police_email" placeholder="Email Address">
-    <input type="phone" name="police_phno" placeholder="Phone Number">
-    
-    <select name="police_city">
-        <option value="volvo">Chennai</option>
-        <option value="saab">Tricy</option>
-        <option value="mercedes">Coimbatore</option>
-        <option value="audi">Madurai</option>
-    </select>
-  
-    <input type="text" name="police_locality" placeholder="Locality">
-    <input type="text" name="police_post" placeholder="Pincode">
-    <input type="password" name="password1" placeholder="Password">
-    <input type="password" name="password2" placeholder="Confirm Password">
-    <input type="submit">
-</form>
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <title>TNCEP - Sign Up</title>
+   <style>
+     body {
+       font-family: Arial, sans-serif;
+       background-color: #f2f2f2;
+       margin: 0;
+       padding: 0;
+     }
+ 
+     .navbar {
+       background-color: #333;
+       color: #fff;
+       padding: 10px;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+     }
+ 
+     .navbar-brand {
+       font-size: 24px;
+       font-weight: bold;
+     }
+ 
+     .navbar-items {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+       display: flex;
+     }
+ 
+     .navbar-items li {
+       margin-right: 10px;
+     }
+ 
+     .navbar-items li a {
+       color: #fff;
+       text-decoration: none;
+       padding: 5px 10px;
+     }
+ 
+     h1 {
+       text-align: center;
+       margin-top: 30px;
+     }
+ 
+     .form-container {
+       max-width: 500px;
+       margin: 30px auto;
+       background-color: #fff;
+       padding: 20px;
+       border-radius: 5px;
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+     }
+ 
+     label {
+       display: block;
+       font-weight: bold;
+       margin-bottom: 5px;
+     }
+ 
+     input[type="text"],
+     input[type="email"],
+     input[type="tel"],
+     input[type="password"],
+     select,
+     textarea {
+       width: 100%;
+       padding: 8px;
+       margin-bottom: 10px;
+       box-sizing: border-box;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+     }
+ 
+     select {
+       height: 34px;
+     }
+ 
+     .submit-btn {
+       background-color: #4CAF50;
+       color: white;
+       padding: 10px 20px;
+       border: none;
+       border-radius: 4px;
+       cursor: pointer;
+       font-size: 16px;
+       width: 100%;
+     }
+ 
+     .submit-btn:hover {
+       background-color: #45a049;
+     }
+   </style>
+ </head>
+ <body>
+   <nav class="navbar">
+     <div class="navbar-brand">TNCEP</div>
+     <ul class="navbar-items">
+       <li><a href="#">Login</a></li>
+     </ul>
+   </nav>
+ 
+   <div class="form-container">
+     <h1>Login</h1>
+     <form>
+       <label for="police_name">Police Name:</label>
+       <input type="text" id="police_name" name="police_name" required>
+ 
+       <label for="police_email">Police Email:</label>
+       <input type="email" id="police_email" name="police_email" required>
+ 
+       <label for="police_phno">Police Phone:</label>
+       <input type="tel" id="police_phno" name="police_phno" required>
+ 
+       <label for="police_city">Police City:</label>
+       <select id="police_city" name="police_city" required>
+         <option value="chennai">Chennai</option>
+         <option value="mumbai">Mumbai</option>
+         <option value="delhi">Delhi</option>
+      </select>
 
+      <label for="police_locality">Police Locality:</label>
+      <select id="police_locality" name="police_locality" required>
+        <option value="loc1">Locality 1</option>
+        <option value="loc2">Locality 2</option>
+        <option value="loc3">Locality 3</option>
+      </select>
+
+      <label for="police_post">Police Post:</label>
+      <textarea id="police_post" name="police_post" rows="4" required></textarea>
+
+      <label for="password1">Password:</label>
+      <input type="password" id="password1" name="password1" required>
+
+      <label for="password2">Confirm Password:</label>
+      <input type="password" id="password2" name="password2" required>
+
+      <input type="submit" value="Submit" class="submit-btn">
+    </form>
+  </div>
+</body>
+</html>

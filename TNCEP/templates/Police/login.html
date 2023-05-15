@@ -1,8 +1,118 @@
-Citizen Login
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TNCEP - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
 
-<form action="" method="post">
-    {% csrf_token %}
-    <input type="text" name="citizen_email" placeholder="Email" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <input type="submit" value="Login">
-</form>
+    .navbar {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar-items {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .navbar-items li {
+      margin-right: 10px;
+    }
+
+    .navbar-items li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .form-container {
+      max-width: 400px;
+      margin: 30px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .submit-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background-color: #45a049;
+    }
+
+    .security-info {
+      color: #999;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">TNCEP</div>
+    <ul class="navbar-items">
+      <li><a href="#">Sign Up</a></li>
+    </ul>
+  </nav>
+
+  <div class="form-container">
+    <h1>Police Login</h1>
+    <form>
+      <label for="police_email">Email:</label>
+      <input type="text" id="police_email" name="police_email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <input type="submit" value="Submit" class="submit-btn">
+    </form>
+
+  </div>
+</body>
+</html>

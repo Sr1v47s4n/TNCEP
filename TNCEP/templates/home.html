@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+        background-color: #2A8DF3;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+        border-radius: 55px;
+        justify-content: space-between;
+        align-items: center;
+      }
+    
+      .navbar-brand {
+        padding: 5px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    
+      .navbar-items {
+        list-style-type: none;
+        margin: 5px;
+        padding: 5px;
+        display: flex;
+      }
+    
+      .navbar-items li {
+        margin-right: 10px;
+      }
+    
+      .navbar-items li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+      }
+
+    .card-container {
+      max-width: 1351px;
+      margin: 30px auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .featured-card {
+      width: 1351px;
+      height: 632px;
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      border-radius: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      width: 551px;
+      height: 379px;
+      background-color: #2A8DF3;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 60px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+
+    .card-grid-1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">TNCEP</div>
+    <ul class="navbar-items">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Login</a></li>
+    </ul>
+  </nav>
+
+  <div class="card-container">
+    <div class="featured-card">
+      <!-- Featured Card Content Here -->
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <!-- Card 1 Content Here -->
+      </div>
+      <div class="card">
+        <!-- Card 2 Content Here -->
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <!-- Card 3 Content Here -->
+      </div>
+      <div class="card">
+        <!-- Card 4 Content Here -->
+      </div>
+    </div>
+
+    <div class="card-grid-1">
+    <div class="card">
+        <!-- Card 5 Content Here -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>

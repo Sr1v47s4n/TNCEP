@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TNCEP Complaint System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    
+      .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    
+      .navbar-items {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+    
+      .navbar-items li {
+        margin-right: 10px;
+      }
+    
+      .navbar-items li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+      }
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 30px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    select,
+    input[type="text"],
+    input[type="date"],
+    input[type="file"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    textarea {
+      height: 150px;
+    }
+
+    .submit-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      float: right;
+    }
+
+    .submit-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">TNCEP</div>
+        <ul class="navbar-items">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Register a Complaint</a></li>
+          <li><a href="#">View Complaints</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+      
+
+  <h1>General Complaint</h1>
+
+  <div class="form-container">
+    <form>
+      <label for="complaint_type">Complaint Type:</label>
+      <select id="complaint_type" name="complaint_type">
+        <option value="type1">Type 1</option>
+        <option value="type2">Type 2</option>
+        <option value="type3">Type 3</option>
+      </select>
+
+      <label for="complaint_desc">Complaint Description:</label>
+      <textarea id="complaint_desc" name="complaint_desc" maxlength="500"></textarea>
+
+      <label for="complaint_city">Complaint City:</label>
+      <select id="complaint_city" name="complaint_city">
+        <option value="chennai">Chennai</option>
+        <option value="mumbai">Mumbai</option>
+        <option value="delhi">Delhi</option>
+      </select>
+
+      <label for="complaint_loc">Complaint Location:</label>
+      <select id="complaint_loc" name="complaint_loc">
+        <option value="loc1">Location 1</option>
+        <option value="loc2">Location 2</option>
+        <option value="loc3">Location 3</option>
+      </select>
+
+      <label for="complaint_date">Complaint Date:</label>
+      <input type="date" id="complaint_date" name="complaint_date">
+
+      <label for="complaint_image">Complaint Image:</label>
+      <input type="file" id="complaint_image" name="complaint_image" accept="image/*" max-size="2000000">
+
+      <label for="complaint_doc">Complaint Document:</label>
+      <input type="file" id="complaint_doc" name="complaint_doc" accept="image/*" max-size="2000000">
+
+      <input type="submit" value="Submit" class="submit-btn">
+    </form>
+  </div>
+</body>
+</html>
