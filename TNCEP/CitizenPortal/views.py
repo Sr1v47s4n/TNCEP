@@ -104,6 +104,7 @@ def emergency_complaint(request):
             return render(request, "emergency_complaint.html", {"error": "Invalid Details"})
     return render(request,"emergency_complaint.html")
 
+@login_required(login_url="login_usr")
 def anon_complaint(request):
     if request.method == "POST":
         try:

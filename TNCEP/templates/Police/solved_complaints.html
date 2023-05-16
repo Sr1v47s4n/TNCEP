@@ -92,10 +92,10 @@
       <h2>Solved Complaints</h2>
 
       <div class="latest-complaints">
-        {% if latest_complaints is None%}
+        {% if solved_complaints is None%}
         No Complaints
         {%endif%}
-        {% for complaint in latest_complaints %}
+        {% for complaint in solved_complaints %}
         <div class="card">
           <div class="card-header">
             <h3>{{ complaint.subject }}</h3>

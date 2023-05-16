@@ -92,23 +92,20 @@
     <h2>Pending Complaints</h2>
 
     <div class="latest-complaints">
-      <div class="complaint-card">
-        <h3>Complaint #1</h3>
-        <p><span class="complaint-type">Type:</span> Type of Complaint</p>
-        <p><span class="complaint-time">Time:</span> Time of Complaint</p>
-      </div>
-
-      <div class="complaint-card">
-        <h3>Complaint #2</h3>
-        <p><span class="complaint-type">Type:</span> Type of Complaint</p>
-        <p><span class="complaint-time">Time:</span> Time of Complaint</p>
-      </div>
-
-      <div class="complaint-card">
-        <h3>Complaint #3</h3>
-        <p><span class="complaint-type">Type:</span> Type of Complaint</p>
-        <p><span class="complaint-time">Time:</span> Time of Complaint</p>
-      </div>
+      {% if view_complaints is None%}
+        No Complaints
+        {%endif%}
+        {% for complaint in view_complatins %}
+        <div class="card">
+          <div class="card-header">
+            <h3>{{ complaint.type }}</h3>
+          </div>
+          <div class="card-body">
+            <p>{{ complaint.desc }}</p>
+            <a href="{% url 'complaint_detail' complaint.id %}">View Details</a>
+          </div>
+        </div>
+        {% endfor %}
     </div>
   </div>
 </body>

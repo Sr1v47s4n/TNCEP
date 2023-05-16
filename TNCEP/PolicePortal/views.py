@@ -6,8 +6,10 @@ from .models import Police
 from Utility.models import AnonComplaint, EmergencyComplaint, NormalComplaint
 # Create your views here.
 
+@login_required(login_url="police_login")
 def home(request):
-    return render(request, "Police/home.html")
+    latest_complatins = NormalComplaint.objects.filter(complaint_loc=request.user.police_locality) & EmergencyComplaint.objects.filter(complaint_loc=request.user.police_locality) & AnonComplaint.objects.filter(complaint_loc=request.user.police_locality)
+    return render(request, "Police/home.html",{"latest_complatins":latest_complatins})
 
 
 def signup_usr(request):
@@ -52,8 +54,8 @@ def logout(request):
 
 @login_required(login_url="police_login")
 def view_complaints(request):
-    complatins = NormalComplaint.objects.filter(complaint_loc=request.user.police_locality, complaint_status="Pending")
-    return render(request, "Police/view_complaints.html",{ "complaints":complatins})
+    view_complatins = NormalComplaint.objects.filter(complaint_loc=request.user.police_locality, complaint_status="Pending")
+    return render(request, "Police/view_complaints.html",{ "view_complatins":view_complatins})
 
 @login_required(login_url="police_login")
 def complaintdetails(request,complaint_id):
@@ -72,8 +74,8 @@ def update_status(request,complaint_id):
     
 @login_required(login_url="police_login")
 def solved_complaints(request):
-    complaints = NormalComplaint.objects.filter(complaint_status="Solved")
-    return render(request, "Police/solved_complaints.html",{"complaints":complaints})
+    solved_complaints = NormalComplaint.objects.filter(complaint_status="Solved")
+    return render(request, "Police/solved_complaints.html",{"solved_complaints":solved_complaints})
 
 
 

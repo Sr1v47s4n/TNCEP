@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complaint Details</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .card-header {
+      background-color: #f2f2f2;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .card-info {
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .card-info span {
+      font-weight: bold;
+    }
+
+    .btn {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">{{ complaint.complaint_type }}</h2>
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{ complaint.desc }}</p>
+        <div class="card-info">
+          <span>Status:</span> {{ complaint.complaint_status }}
+        </div>
+        <div class="card-info">
+          <span>Submitted by:</span> {{ complaint.complaint_citizen }}
+        </div>
+        <div class="card-info">
+          <span>Date:</span> {{ complaint.complaint_date }}
+        </div>
+        <div class="card-info">
+            <span>Image:</span> {{ complaint.complaint_image }}
+          </div>
+
+          <div class="card-info">
+            <span>Video:</span> {{ complaint.complaint_doc }}
+          </div>
+            
+        <a href="#" onclick="history.back()" class="btn">Back</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
