@@ -54,7 +54,7 @@ def login_usr(request):
             citizen = authenticate(request, citizen_aadhaar=aadhaar, password=citizen_password)
             if citizen is not None:
                 login(request, citizen)
-                return redirect("home")
+                return redirect("register")
             else:
                 return render(request,"login.html", {"message": "Invalid credentials!"})
           
