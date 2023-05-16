@@ -1,15 +1,3 @@
-{% comment %} Citizen Login
-{{error}}
-{{message}}
-<form action="" method="post">
-    {%csrf_token%}
-    <input type="radio" name="smem" value="Email" checked> Email
-    <input type="radio" name="smem" value="PhNo"> Phone
-    <input type="text" name="username" placeholder="Email or Phone Number">
-    <input type="password" name="password" placeholder="Password" required>
-    <input type="submit" value="Login">
-</form> {% endcomment %}
-
 <html lang="en" oncontextmenu=" return disableRightClick();"><head>
     <title>LoginPage</title>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -37,7 +25,38 @@
         body {
             background-color: #FDF5DF;
         }
-
+        .navbar {
+            background-color: #2A8DF3;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+           
+            justify-content: space-between;
+            align-items: center;
+          }
+        
+          .navbar-brand {
+            padding: 5px;
+            font-size: 24px;
+            font-weight: bold;
+          }
+        
+          .navbar-items {
+            list-style-type: none;
+            margin: 5px;
+            padding: 5px;
+            display: flex;
+          }
+        
+          .navbar-items li {
+            margin-right: 10px;
+          }
+        
+          .navbar-items li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+          }
         .background {
             width: 430px;
             height: 520px;
@@ -126,6 +145,15 @@
 
 
 <body>
+    <nav class="navbar">
+        <div class="navbar-brand">TNCEP</div>
+        <ul class="navbar-items">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="{%url 'signup_usr' %}">Sign Up</a></li>
+        </ul>
+      </nav>
     <div class="background">
         
         

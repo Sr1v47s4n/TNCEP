@@ -48,7 +48,7 @@ def login_usr(request):
    
                     
 @login_required(login_url="police_login")
-def logout(request):
+def logout_usr(request):
     logout(request)
     return redirect("police_login")
 

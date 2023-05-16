@@ -63,7 +63,7 @@ def login_usr(request):
         return redirect("login_usr", {"message": "User Does Not Exist!"})
 
 @login_required(login_url="login_usr")
-def logout(request):
+def logout_usr(request):
     logout(request)
     return redirect("login_usr",{ "message": "Logged out successfully!"})
 
