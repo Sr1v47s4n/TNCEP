@@ -8,7 +8,7 @@ from Utility.models import AnonComplaint, EmergencyComplaint, NormalComplaint
 
 @login_required(login_url="police_login")
 def home(request):
-    latest_complatins = NormalComplaint.objects.filter(complaint_loc=request.user.police_locality) & EmergencyComplaint.objects.filter(complaint_loc=request.user.police_locality) & AnonComplaint.objects.filter(complaint_loc=request.user.police_locality)
+    latest_complatins = NormalComplaint.objects.filter(complaint_loc=request.user.police_locality) or EmergencyComplaint.objects.filter(complaint_loc=request.user.police_locality) or AnonComplaint.objects.filter(complaint_loc=request.user.police_locality)
     return render(request, "Police/home.html",{"latest_complatins":latest_complatins})
 
 

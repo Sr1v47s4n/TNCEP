@@ -12,6 +12,7 @@ urlpatterns = [
     path("anon_complaint/", views.anon_complaint, name="anon-complaint"),
     path("complaint/", views.normal_complaint , name="complaint"),
     path("about/", views.about , name="about"),
-    path("", views.home , name="home"),
+    path("home/", views.home , name="home"),
+    path("", views.register , name="register"),
 ]
     

@@ -167,3 +167,5 @@ def delete_complaint(request):
 def about(request):
     return render(request, "about.html")
 
+def register(request):
+    return render(request, "register.html")

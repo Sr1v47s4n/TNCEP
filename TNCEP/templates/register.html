@@ -1,0 +1,126 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    .navbar {
+        background-color: #2A8DF3;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+       
+        justify-content: space-between;
+        align-items: center;
+      }
+    
+      .navbar-brand {
+        padding: 5px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    
+      .navbar-items {
+        list-style-type: none;
+        margin: 5px;
+        padding: 5px;
+        display: flex;
+      }
+    
+      .navbar-items li {
+        margin-right: 10px;
+      }
+    
+      .navbar-items li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+      }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .card-description {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .card-button {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .card-button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">TNCEP</div>
+        <ul class="navbar-items">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="{%url 'login_usr' }">Login</a></li>
+        </ul>
+      </nav>
+  <div class="container">
+    <div class="card">
+      <h2 class="card-title">General Complaint</h2>
+      <p class="card-description">Submit a general complaint for various issues.</p>
+      <a href="{% url 'complaint' %}" class="card-button">Submit Complaint</a>
+    </div>
+    <div class="card">
+      <h2 class="card-title">Pseudo Anonymous</h2>
+      <p class="card-description">Submit a complaint anonymously.</p>
+      <a href="{% url 'anon-complaint' %}" class="card-button">Submit Complaint</a>
+    </div>
+    <div class="card">
+      <h2 class="card-title">Accidents Complaint</h2>
+      <p class="card-description">Report accidents and related issues.</p>
+      <a href="{% url 'emergency-complaint' %}" class="card-button">Submit Complaint</a>
+    </div>
+  </div>
+</body>
+
+</html>
