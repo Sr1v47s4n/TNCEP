@@ -103,10 +103,11 @@
   <nav class="navbar">
     <div class="navbar-brand">TNCEP</div>
     <ul class="navbar-items">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Register a Complaint</a></li>
-      <li><a href="#">View Complaints</a></li>
-      <li><a href="#">Logout</a></li>
+      <li><a href="{%url 'home' %}">Home</a></li>
+          <li><a href="{%url 'complaint' %}">Register a Complaint</a></li>
+          <li><a href="{%url 'citizen-complaint-status' %}">Track Status</a></li>
+          <li><a href="{%url 'complaints' %}">View Complaints</a></li>
+          <li><a href="{%url 'logout_usr' %}">Logout</a></li>
     </ul>
   </nav>
 
@@ -115,9 +116,13 @@
     <form>
       <label for="complaint_type">Complaint Type:</label>
       <select id="complaint_type" name="complaint_type" required>
-        <option value="type1">Type 1</option>
-        <option value="type2">Type 2</option>
-        <option value="type3">Type 3</option>
+        <option value="chennai">Chennai</option>
+          <option value="Coimbatore">Coimbatore</option>
+          <option value="Madurai">Madurai</option>
+          <option value="Tiruchirapalli">Tiruchirapalli</option>
+          <option value="Tiruppur">Tiruppur</option>
+          <option value="Salem">Salem</option>
+          <option value="Erode">Erode</option>
       </select>
 
       <label for="complaint_desc">Complaint Description:</label>
@@ -126,9 +131,18 @@
       <label for="complaint_city">Complaint City:</label>
       <select id="complaint_city" name="complaint_city" required>
         <option value="">Select City</option>
-        <option value="chennai">Chennai</option>
-        <option value="delhi">Delhi</option>
-        <option value="mumbai">Mumbai</option>
+        <option value="Chennai">Chennai</option>
+          <option value="Coimbatore">Coimbatore</option>
+          <option value="Madurai">Madurai</option>
+          <option value="Tiruchirappalli">Tiruchirappalli</option>
+          <option value="Tiruppur">Tiruppur</option>
+          <option value="Salem">Salem</option>
+          <option value="Erode">Erode</option>
+          <option value="Vellore">Vellore</option>
+          <option value="Tirunelvel">Tirunelvel</option>
+          <option value="Ambattur">Ambattur</option>
+          <option value="Avadi">Avadi</option>
+          <option value="Tiruvottiyur">Tiruvottiyur</option>
       </select>
 
       <label for="complaint_loc">Complaint Location:</label>

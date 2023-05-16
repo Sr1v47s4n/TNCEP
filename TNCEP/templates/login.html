@@ -130,26 +130,24 @@
         
         
     </div>
-    <form action="{%url ''%}" method="post">
+    <form action="" method="post">
         {% csrf_token %}
         <h3>TNCEP</h3>
-        <label class="error">{% if messages %}
-            {% for message in messages %}
+        <label class="error">
 
             {{ message }}
 
-            {% endfor %}
-            {%endif%}
+
         </label>
-        <label for="username"></label>
-        <label for="username">Aadhaar:</label>
-        <input type="text" placeholder="Enter Your Aadhaar Number" id="username" name="aadhaar" required="">
+        <label for="aadhaar"></label>
+        <label for="aadhaar">Aadhaar:</label>
+        <input type="text" placeholder="Enter Your Aadhaar Number" id="aadhaar" name="aadhaar" required="">
 
         <label for="password">Password:</label>
         <input type="password" placeholder="Enter Your Password" id="password" name="Password" required="">
         <a hidden="true">Created By Srivatsan Sk</a>
         <input class="button" type="submit" name="Login" value="Login">
-        <a class="input" href="{%url 'forgotpwd'%}">Forgot Password</a>
+        <a class="input" href="#">Forgot Password</a>
 
 
     </form>

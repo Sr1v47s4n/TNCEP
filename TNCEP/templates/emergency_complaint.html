@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TNCEP - Emergency Complaint</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      margin: 0;
-      padding: 0;
-    }
+  <head>
+    <title>TNCEP - Emergency Complaint</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
 
-    .navbar {
+      .navbar {
         background-color: #333;
         color: #fff;
         padding: 10px;
@@ -18,134 +18,267 @@
         justify-content: space-between;
         align-items: center;
       }
-    
+
       .navbar-brand {
         font-size: 24px;
         font-weight: bold;
       }
-    
+
       .navbar-items {
         list-style-type: none;
         margin: 0;
         padding: 0;
         display: flex;
       }
-    
+
       .navbar-items li {
         margin-right: 10px;
       }
-    
+
       .navbar-items li a {
         color: #fff;
         text-decoration: none;
         padding: 5px 10px;
       }
-    h1 {
-      text-align: center;
-      margin-top: 30px;
-    }
+      h1 {
+        text-align: center;
+        margin-top: 30px;
+      }
 
-    .form-container {
-      max-width: 600px;
-      margin: 30px auto;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
+      .form-container {
+        max-width: 600px;
+        margin: 30px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
 
-    label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
 
-    input[type="text"],
-    textarea {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
 
-    select {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
 
-    input[type="file"] {
-      margin-bottom: 10px;
-    }
+      input[type="file"] {
+        margin-bottom: 10px;
+      }
 
-    .submit-btn {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-      width: 100%;
-    }
+      .submit-btn {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+      }
 
-    .submit-btn:hover {
-      background-color: #45a049;
-    }
-  </style>
-</head>
-<body>
-  <nav class="navbar">
-    <div class="navbar-brand">TNCEP</div>
-    <ul class="navbar-items">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Register a Complaint</a></li>
-      <li><a href="#">View Complaints</a></li>
-      <li><a href="#">Logout</a></li>
-    </ul>
-  </nav>
+      .submit-btn:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-brand">TNCEP</div>
+      <ul class="navbar-items">
+        <li><a href="{%url 'home' %}">Home</a></li>
+        <li><a href="{%url 'complaint' %}">Register a Complaint</a></li>
+        <li><a href="{%url 'citizen-complaint-status' %}">Track Status</a></li>
+        <li><a href="{%url 'complaints' %}">View Complaints</a></li>
+        <li><a href="{%url 'logout_usr' %}">Logout</a></li>
+      </ul>
+    </nav>
 
-  <div class="form-container">
-    <h1>Emergency Complaint</h1>
-    <form>
-      <label for="complaint_type">Complaint Type:</label>
-      <select id="complaint_type" name="complaint_type" required>
-        <option value="type1">Type 1</option>
-        <option value="type2">Type 2</option>
-        <option value="type3">Type 3</option>
-      </select>
+    <div class="form-container">
+      <h1>Emergency Complaint</h1>
+      <form>
+        <label for="complaint_type">Complaint Type:</label>
+        <select id="complaint_type" name="complaint_type" required>
+          <option value="vehical">Vehical Accidents</option>
+          <option value="fire">Fire Accidents</option>
+          <option value="industrial">Industrial Accidents</option>
+        </select>
 
-      <label for="complaint_desc">Complaint Description:</label>
-      <textarea id="complaint_desc" name="complaint_desc" rows="6" maxlength="500" required></textarea>
+        <label for="complaint_desc">Complaint Description:</label>
+        <textarea
+          id="complaint_desc"
+          name="complaint_desc"
+          rows="6"
+          maxlength="500"
+          required
+        ></textarea>
 
-      <label for="complaint_city">Complaint City:</label>
-      <select id="complaint_city" name="complaint_city" required>
-        <option value="chennai">Chennai</option>
-        <option value="delhi">Delhi</option>
-        <option value="mumbai">Mumbai</option>
-      </select>
+        <label for="complaint_city">Complaint City:</label>
+        <select id="complaint_city" name="complaint_city" required>
+          <option value="chennai">Chennai</option>
+          <option value="Coimbatore">Coimbatore</option>
+          <option value="Madurai">Madurai</option>
+          <option value="Tiruchirapalli">Tiruchirapalli</option>
+          <option value="Tiruppur">Tiruppur</option>
+          <option value="Salem">Salem</option>
+          <option value="Erode">Erode</option>
+          <option value="Tirunelveli">Tirunelveli</option>
+          <option value="Vellore">Vellore</option>
+          <option value="Thoothukudi">Thoothukudi</option>
+          <option value="Dindigul">Dindigul</option>
+          <option value="Thanjavur">Thanjavur</option>
+          <option value="Ranipet">Ranipet</option>
+          <option value="Sivakasi">Sivakasi</option>
+          <option value="Karur">Karur</option>
+          <option value="Udhagamandalam">Udhagamandalam</option>
+          <option value="Hosur">Hosur</option>
+          <option value="Nagercoil">Nagercoil</option>
+          <option value="Kanchipuram">Kanchipuram</option>
+          <option value="Kumarapalayam">Kumarapalayam</option>
+          <option value="Karaikkudi">Karaikkudi</option>
+          <option value="Neyveli">Neyveli</option>
+          <option value="Cuddalore">Cuddalore</option>
+          <option value="Kumbakonam">Kumbakonam</option>
+          <option value="Tiruvannamalai">Tiruvannamalai</option>
+          <option value="Pollachi">Pollachi</option>
+          <option value="Rajapalayam">Rajapalayam</option>
+          <option value="Gudiyatham">Gudiyatham</option>
+          <option value="Pudukkottai">Pudukkottai</option>
+          <option value="Vaniyambadi">Vaniyambadi</option>
+          <option value="Ambur">Ambur</option>
+          <option value="Nagapattinam">Nagapattinam</option>
+        </select>
 
-      <label for="complaint_loc">Complaint Location:</label>
-      <select id="complaint_loc" name="complaint_loc" required>
-        <!-- Options will be dynamically populated based on the selected city -->
-      </select>
+        <label for="complaint_loc">Complaint Location:</label>
+        <select id="complaint_loc" name="complaint_loc" required>
+          <option value="Chennai">Chennai</option>
+          <option value="Coimbatore">Coimbatore</option>
+          <option value="Madurai">Madurai</option>
+          <option value="Tiruchirappalli">Tiruchirappalli</option>
+          <option value="Tiruppur">Tiruppur</option>
+          <option value="Salem">Salem</option>
+          <option value="Erode">Erode</option>
+          <option value="Vellore">Vellore</option>
+          <option value="Tirunelvel">Tirunelvel</option>
+          <option value="Ambattur">Ambattur</option>
+          <option value="Avadi">Avadi</option>
+          <option value="Tiruvottiyur">Tiruvottiyur</option>
+          <option value="Thoothukudi">Thoothukudi</option>
+          <option value="Nagercoil">Nagercoil</option>
+          <option value="Thanjavur">Thanjavur</option>
+          <option value="Pallavapuram">Pallavapuram</option>
+          <option value="Karur">Karur</option>
+          <option value="Dindigul">Dindigul</option>
+          <option value="Tambaram">Tambaram</option>
+          <option value="Cuddalore">Cuddalore</option>
+          <option value="Alandur">Alandur</option>
+          <option value="Kancheepuram">Kancheepuram</option>
+          <option value="Thiruvannamalai">Thiruvannamalai</option>
+          <option value="Kumbakonam">Kumbakonam</option>
+          <option value="Rajapalayam">Rajapalayam</option>
+          <option value="Kurichi">Kurichi</option>
+          <option value="Madhavaram">Madhavaram</option>
+          <option value="Pudukkottai">Pudukkottai</option>
+          <option value="Hosur">Hosur</option>
+          <option value="Ambur">Ambur</option>
+          <option value="Karaikudi">Karaikudi</option>
+          <option value="Nagapattinam">Nagapattinam</option>
+          <option value="Villupuram">Villupuram</option>
+          <option value="Kuniyamuthur">Kuniyamuthur</option>
+          <option value="Paramakudi">Paramakudi</option>
+          <option value="Tiruchengode">Tiruchengode</option>
+          <option value="Vaniyambadi">Vaniyambadi</option>
+          <option value="Kovilpatti">Kovilpatti</option>
+          <option value="Theni Allinagaram">Theni Allinagaram</option>
+          <option value="Gudiyatham">Gudiyatham</option>
+          <option value="Kadayanallur">Kadayanallur</option>
+          <option value="Pollachi">Pollachi</option>
+          <option value="Avaniapuram">Avaniapuram</option>
+          <option value="Udhagamandalam">Udhagamandalam</option>
+          <option value="Aruppukkottai">Aruppukkottai</option>
+          <option value="Velampalayam">Velampalayam</option>
+          <option value="Maduravoyal">Maduravoyal</option>
+          <option value="Mayiladuthurai">Mayiladuthurai</option>
+          <option value="Veerappanchatram">Veerappanchatram</option>
+          <option value="Goundampalayam">Goundampalayam</option>
+          <option value="Maraimalainagar">Maraimalainagar</option>
+          <option value="Arakkonam">Arakkonam</option>
+          <option value="Pamma">Pamma</option>
+          <option value="Bodinayakanur">Bodinayakanur</option>
+          <option value="Srivilliputhur">Srivilliputhur</option>
+          <option value="Virudhachalam">Virudhachalam</option>
+          <option value="Kasipalayam">Kasipalayam</option>
+          <option value="Pattukkottai">Pattukkottai</option>
+          <option value="Tindivanam">Tindivanam</option>
+          <option value="Virudhunagar">Virudhunagar</option>
+          <option value="Komarapalayam">Komarapalayam</option>
+          <option value="Krishnagiri">Krishnagiri</option>
+          <option value="Sivakasi">Sivakasi</option>
+          <option value="Valparai">Valparai</option>
+          <option value="Tenkasi">Tenkasi</option>
+          <option value="Palani">Palani</option>
+          <option value="Nallur">Nallur</option>
+          <option value="Mettupalayam">Mettupalayam</option>
+          <option value="Dharmapuri">Dharmapuri</option>
+          <option value="Kambam">Kambam</option>
+          <option value="Mannargudi">Mannargudi</option>
+          <option value="Puliyankudi">Puliyankudi</option>
+          <option value="Tiruppattur">Tiruppattur</option>
+          <option value="Anaiyur">Anaiyur</option>
+          <option value="Arani">Arani</option>
+          <option value="Thiruverkadu">Thiruverkadu</option>
+          <option value="Chengalpattu">Chengalpattu</option>
+          <option value="Chidambaram">Chidambaram</option>
+          <option value="Attur">Attur</option>
+          <option value="Ramanathapuram">Ramanathapuram</option>
+          <option value="Udumalaipettai">Udumalaipettai</option>
+          <option value="Panruti">Panruti</option>
+          <option value="Gobichettipalayam">Gobichettipalayam</option>
+          <option value="Tiruvarur">Tiruvarur</option>
+          <option value="Sankarankoil">Sankarankoil</option>
+          <option value="Poonamallee">Poonamallee</option>
+        </select>
 
-      <label for="complaint_date">Complaint Date:</label>
-      <input type="date" id="complaint_date" name="complaint_date" required>
+        <label for="complaint_date">Complaint Date:</label>
+        <input type="date" id="complaint_date" name="complaint_date" required />
 
-      <label for="complaint_image">Complaint Image (max 2MB):</label>
-      <input type="file" id="complaint_image" name="complaint_image" accept="image/*" required>
+        <label for="complaint_image">Complaint Image (max 2MB):</label>
+        <input
+          type="file"
+          id="complaint_image"
+          name="complaint_image"
+          accept="image/*"
+          required
+        />
 
-      <label for="complaint_doc">Complaint Document (max 2MB):</label>
-      <input type="file" id="complaint_doc" name="complaint_doc" accept="image/*" required>
+        <label for="complaint_doc">Complaint Document (max 2MB):</label>
+        <input
+          type="file"
+          id="complaint_doc"
+          name="complaint_doc"
+          accept="image/*"
+          required
+        />
 
-      <input type="submit" value="Submit" class="submit-btn">
-    </form>
-  </div>
-</body>
+        <input type="submit" value="Submit" class="submit-btn" />
+      </form>
+    </div>
+  </body>
 </html>

@@ -106,11 +106,8 @@
               {% csrf_token %}
               <h3>Sign Up</h3>
               <label class="error">
-                {% if messages %}
-                  {% for message in messages %}
-                    {{ message }}
-                  {% endfor %}
-                {% endif %}
+                {{ message }}
+                  
               </label>
               <label for="citizen_fname">Full Name:</label>
               <input type="text" placeholder="Enter Full Name" id="citizen_fname" name="citizen_fname" required>
@@ -134,7 +131,7 @@
               <input type="password" placeholder="Confirm Your Password" id="citizen_confirm_password" name="citizen_confirm_password" required>
             
               <input class="button" type="submit" name="SignUp" value="Sign Up">
-              <p>Already have an account? <a href="{%url 'login'%}">Log in</a></p>
+              <p>Already have an account? <a href="{%url 'login_usr'%}">Log in</a></p>
             </form>
         </div>
         </body>

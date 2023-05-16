@@ -82,9 +82,9 @@
   <div class="sidebar">
     <div class="sidebar-brand">Dashboard</div>
     <ul class="sidebar-items">
-      <li><a href="#">Latest Complaints</a></li>
-      <li><a href="#">My Complaints</a></li>
-      <li><a href="#">Closed Cases</a></li>
+      <li><a href="{%url 'control_home' %}">Latest Complaints</a></li>
+      <li><a href="{% url 'control-view_complaints' %}">My Complaints</a></li>
+      <li><a href="{% url 'control-solvedcomplaints'%}">Closed Cases</a></li>
     </ul>
   </div>
 

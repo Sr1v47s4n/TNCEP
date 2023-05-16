@@ -105,7 +105,8 @@
  
    <div class="form-container">
      <h1>Login</h1>
-     <form>
+     <form action="" method="POST">
+      {%csrf_token%}
        <label for="police_name">Police Name:</label>
        <input type="text" id="police_name" name="police_name" required>
  

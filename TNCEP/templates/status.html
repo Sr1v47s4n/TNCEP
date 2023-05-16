@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Complaint Progress</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .progress-report {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .progress-bar {
+      display: flex;
+      align-items: center;
+      height: 30px;
+      background-color: #f3f3f3;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 5px;
+    }
+    .progress-bar .step {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .progress-bar .step.completed {
+      background-color: #2A8DF3;
+      color: #fff;
+    }
+    .progress-bar .step.pending {
+      background-color: #f3f3f3;
+      color: #999;
+    }
+    .complaint .status {
+      font-weight: bold;
+    }
+    .complaint .progress-stage {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Complaint Progress</h2>
+  <div class="progress-report">
+    <div class="complaint" id="complaint-progress">
+      <!-- Complaint details will be dynamically loaded here -->
+    </div>
+  </div>
+
+  <script>
+    // Function to load complaint progress based on the provided track ID
+    function loadComplaintProgress(trackId) {
+      // Here, you can make an AJAX request to fetch the complaint progress data
+      // Once you receive the data, update the HTML dynamically
+
+      // Example data for demonstration
+      var complaintData = {
+        id: "#12345",
+        status: "In Progress",
+        steps: [
+          { name: "Submitted", completed: true },
+          { name: "Accepted", completed: true },
+          { name: "Pending", completed: false },
+          { name: "Found Victim", completed: false },
+          { name: "Investigation", completed: false },
+          { name: "Closed", completed: false }
+        ]
+      };
+
+      var complaintProgress = document.getElementById("complaint-progress");
+      complaintProgress.innerHTML = `
+        <div class="complaint-id">Complaint ID: ${complaintData.id}</div>
+        <div class="progress-bar">
+          ${complaintData.steps
+            .map(
+              step =>
+                `<div class="step ${
+                  step.completed ? 'completed' : 'pending'
+                }">${step.name}</div>`
+            )
+            .join("")}
+        </div>
+        <div class="status">Status: ${complaintData.status}</div>
+      `;
+    }
+
+    // Usage example: Call the loadComplaintProgress function with a track ID
+    var trackId = "ABCDE12345"; // Replace with the actual track ID
+    loadComplaintProgress(trackId);
+  </script>
+</body>
+</html>

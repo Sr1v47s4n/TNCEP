@@ -73,6 +73,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "TNCEP.wsgi.application"
 
 AUTHENTICATION_BACKENDS = [
+    'CitizenPortal.backend.CitizenBackend',
     'PolicePortal.backend.PoliceAuthBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]

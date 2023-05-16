@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TNCEP</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .navbar {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    
+      .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    
+      .navbar-items {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+    
+      .navbar-items li {
+        margin-right: 10px;
+      }
+    
+      .navbar-items li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+      }
+
+      .complaint-list {
+        padding: 20px;
+      }
+
+      .complaint-card {
+        background-color: #f2f2f2;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .complaint-type {
+        font-weight: bold;
+      }
+
+      .complaint-time {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+        <div class="navbar-brand">TNCEP</div>
+        <ul class="navbar-items">
+          <li><a href="{%url 'home' %}">Home</a></li>
+          <li><a href="{%url 'complaint' %}">Register a Complaint</a></li>
+          <li><a href="{%url 'citizen-complaint-status' %}">Track Status</a></li>
+          <li><a href="{%url 'complaints' %}">View Complaints</a></li>
+          <li><a href="{%url 'logout_usr' %}">Logout</a></li>
+        </ul>
+      </nav> 
+    <div class="container">
+      <div class="complaint-list">
+        <h3>List of Cases</h3>
+        <div class="complaint-card">
+          <p><span class="complaint-type">Type:</span> Type of Complaint</p>
+          <p><span class="complaint-time">Time:</span> Time of Complaint</p>
+          <p>Subject of Complaint</p>
+        </div>
+
+        <div class="complaint-card">
+          <p><span class="complaint-type">Type:</span> Type of Complaint</p>
+          <p><span class="complaint-time">Time:</span> Time of Complaint</p>
+          <p>Subject of Complaint</p>
+        </div>
+
+        <div class="complaint-card">
+          <p><span class="complaint-type">Type:</span> Type of Complaint</p>
+          <p><span class="complaint-time">Time:</span> Time of Complaint</p>
+          <p>Subject of Complaint</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

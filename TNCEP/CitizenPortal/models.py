@@ -4,10 +4,10 @@ from django.utils import timezone
 
 class Citizen(AbstractBaseUser):
     citizen_id = models.AutoField(primary_key=True)
+    citizen_aadhaar = models.CharField(max_length=12, null=False, blank=False, unique=True)
     citizen_fname = models.CharField(max_length=100, null=False, blank=False)
     citizen_email = models.EmailField(max_length=100, null=False, blank=False, unique=True)
     citizen_phno = models.CharField(max_length=10, null=False, blank=False, unique=True)
-    citizen_aadhar = models.CharField(max_length=10, null=False, blank=False, unique=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     last_login = models.DateTimeField(default=timezone.now)

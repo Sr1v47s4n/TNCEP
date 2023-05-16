@@ -12,7 +12,8 @@ class NormalComplaint(models.Model):
     complaint_status = models.CharField(max_length=50, null=False, blank=False)
     complaint_image = models.ImageField(upload_to="complaints/images", null=True, blank=True)
     complaint_doc = models.FileField(upload_to="complaints/doc", null=True, blank=True)
-    complaint_citizen = models.ForeignKey("CitizenPortal.Citizen", on_delete=models.CASCADE, null=False, blank=False)
+    # complaint_citizen = models.ForeignKey("CitizenPortal.Citizen", on_delete=models.CASCADE, null=False, blank=False)
+    complaint_citizen = models.CharField(max_length=50, null=False, blank=False)
 
     def __str__(self):
         return self.complaint_id
@@ -40,6 +41,6 @@ class AnonComplaint(models.Model):
     complaint_status = models.CharField(max_length=50, null=False, blank=False)
     complaint_image = models.ImageField(upload_to="complaints/images", null=True, blank=True)
     complaint_video = models.FileField(upload_to="complaints/videos", null=True, blank=True)
-
+    complaint_citizen = models.CharField(max_length=50, null=False, blank=False)
     def __str__(self):
         return self.complaint_id

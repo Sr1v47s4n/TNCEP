@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+
+      .sidebar {
+        background-color: #333;
+        color: #fff;
+        width: 200px;
+        height: 100vh;
+        padding: 20px;
+        position: fixed;
+      }
+
+      .sidebar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .sidebar-items {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .sidebar-items li {
+        margin-bottom: 10px;
+      }
+
+      .sidebar-items li a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .main-content {
+        margin-left: 240px;
+        padding: 20px;
+      }
+
+      .latest-complaints {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 20px;
+      }
+
+      .complaint-card {
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
+
+      .complaint-card h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      .complaint-card p {
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
+
+      .complaint-card .complaint-type {
+        font-weight: bold;
+      }
+
+      .complaint-card .complaint-time {
+        font-style: italic;
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="sidebar-brand">Dashboard</div>
+      <ul class="sidebar-items">
+        <li><a href="{%url 'control_home' %}">Latest Complaints</a></li>
+        <li><a href="{% url 'control-view_complaints' %}">My Complaints</a></li>
+        <li><a href="#">Closed Cases</a></li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <h2>Solved Complaints</h2>
+
+      <div class="latest-complaints">
+        {% if latest_complaints is None%}
+        No Complaints
+        {%endif%}
+        {% for complaint in latest_complaints %}
+        <div class="card">
+          <div class="card-header">
+            <h3>{{ complaint.subject }}</h3>
+          </div>
+          <div class="card-body">
+            <p>{{ complaint.description }}</p>
+            <a href="{% url 'complaint_detail' complaint.id %}">View Details</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
